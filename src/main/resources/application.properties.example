@@ -1,9 +1,21 @@
+### POSTGRESQL ###
+
+spring.datasource.url=
+spring.datasource.username=
+spring.datasource.password=
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+
 ### CASANDRA ###
 
-spring.data.casandra.keyspace.name=
+spring.data.casandra.keyspace.name=user
 spring.data.casandra.contact-points=
+spring.data.casandra.port=
 spring.data.casandra.scheme-action=CONTACT_IF_NOT_EXIST
-spring.data.casandra.local-datacenter=datacenter
-spring.data.casandra.read-timeout-millis=10000
+spring.data.casandra.local-datacenter=datacenter1
+spring.data.casandra.read-timeout-millis=12000
 
 ### REDIS ###
+
+spring.redis.host=
+spring.redis.port=
