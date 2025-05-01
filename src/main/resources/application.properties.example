@@ -1,0 +1,9 @@
+### CASANDRA ###
+
+spring.data.casandra.keyspace.name=
+spring.data.casandra.contact-points=
+spring.data.casandra.scheme-action=CONTACT_IF_NOT_EXIST
+spring.data.casandra.local-datacenter=datacenter
+spring.data.casandra.read-timeout-millis=10000
+
+### REDIS ###
