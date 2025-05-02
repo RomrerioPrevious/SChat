@@ -20,11 +20,13 @@ This database used for save messages and posts.
 <details>
     <summary>How to install</summary>
 
-```bash
-CREATE TABLE posts(id int PRIMARY KEY, message text, pinned text, date date, time time, user_id int, hashtags_visible list<text>, hashtags_invisible list<text>, likes int);
-CREATE TABLE answeres(id int PRIMARY KEY, message text, date date, time time, post_id int, answare_id int, gif_link text);
-CREATE TABLE personal(id int PRIMARY KEY, message text, date date, time time, user_id int, chat_id int, links list<text>, answare_id int, forwarded_id int, gif_link text);
-CREATE TABLE chats(id int PRIMARY KEY, name text, description text, date date, time time, users list<int>, secret text, messages list<int>, avatar text, is_secret bool);```
+```cql
+CREATE KEYSPACE user WITH replication = {'class': 'SimpleStrategy', 'replication_factor': 1};
+
+CREATE TABLE posts(id bigint PRIMARY KEY, message text, pinned text, date date, time time, user_id int, hashtags_visible list<text>, hashtags_invisible list<text>, likes int);
+CREATE TABLE answers(id bigint PRIMARY KEY, message text, date date, time time, post_id bigint, answer_id bigint, gif_link text);
+CREATE TABLE personal(id bigint PRIMARY KEY, message text, date date, time time, user_id int, chat_id int, links list<text>, answer_id bigint, forwarded_id bigint, gif_link text);
+CREATE TABLE chats(id int PRIMARY KEY, name text, description text, date date, time time, users list<int>, secret text, messages list<bigint>, avatar text, is_secret boolean);
 ```
 
  **Posts:**
@@ -33,7 +35,7 @@ CREATE TABLE chats(id int PRIMARY KEY, name text, description text, date date, t
 | ------- | ------- | ----------- | ---- | ---- | ------- | ------------------ | -------------------- | ------- |
 | Integer | Text    | Text (link) | Date | Time | Integer | [Text]             | [Text]               | Integer |
 
-**Answeres:**
+**Answers:**
 
 | Id      | Message | Date | Time | Post ID | Answare ID | GIF Link |
 | ------- | ------- | ---- | ---- | ------- | ---------- | -------- |
@@ -60,7 +62,7 @@ This database used for save user's accounts.
 <details>
     <summary>How to install</summary>
 
-```bash
+```sql
 CREATE TABLE users (
     id SERIAL PRIMARY KEY,
     password TEXT NOT NULL,
