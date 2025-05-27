@@ -29,8 +29,8 @@ public class Personal {
     @CassandraType(type = CassandraType.Name.TIME)
     private LocalTime time;
     @Column("user_id")
-    @CassandraType(type = CassandraType.Name.INT)
-    private int userId;
+    @CassandraType(type = CassandraType.Name.BIGINT)
+    private long userId;
     @Column("chat_id")
     @CassandraType(type = CassandraType.Name.BIGINT)
     private long chatId;

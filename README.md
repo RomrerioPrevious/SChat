@@ -22,11 +22,9 @@ This database used for save messages and posts.
 
 ```cql
 CREATE KEYSPACE user WITH replication = {'class': 'SimpleStrategy', 'replication_factor': 1};
-
-CREATE TABLE posts(id bigint PRIMARY KEY, message text, pinned text, date date, time time, user_id int, hashtags_visible list<text>, hashtags_invisible list<text>, likes int);
-CREATE TABLE answers(id bigint PRIMARY KEY, message text, date date, time time, post_id bigint, answer_id bigint, gif_link text);
-CREATE TABLE personal(id bigint PRIMARY KEY, message text, date date, time time, user_id int, chat_id int, links list<text>, answer_id bigint, forwarded_id bigint, gif_link text);
-CREATE TABLE chats(id int PRIMARY KEY, name text, description text, date date, time time, users list<int>, secret text, messages list<bigint>, avatar text, is_secret boolean);
+CREATE TABLE posts(id bigint PRIMARY KEY, message text, pinned text, date date, time time, user_id bigint, hashtags_visible list<text>, hashtags_invisible list<text>, answers list<bigint>, likes int);CREATE TABLE answers(id bigint PRIMARY KEY, message text, date date, time time, post_id bigint, user_id bigint, answer_id bigint, gif_link text);
+CREATE TABLE personal(id bigint PRIMARY KEY, message text, date date, time time, user_id bigint, chat_id int, links list<text>, answer_id bigint, forwarded_id bigint, gif_link text);
+CREATE TABLE chats(id int PRIMARY KEY, name text, description text, date date, time time, users list<bigint>, secret text, messages list<bigint>, avatar text, is_secret boolean);
 ```
 
  **Posts:**
@@ -64,7 +62,7 @@ This database used for save user's accounts.
 
 ```sql
 CREATE TABLE users (
-    id SERIAL PRIMARY KEY,
+    id BIGINT SERIAL PRIMARY KEY,
     password TEXT NOT NULL,
     email TEXT UNIQUE NOT NULL,
     username TEXT UNIQUE NOT NULL,

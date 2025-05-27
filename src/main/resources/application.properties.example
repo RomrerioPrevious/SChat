@@ -13,12 +13,12 @@ spring.jpa.show-sql=true
 
 ### CASANDRA ###
 
-spring.data.casandra.keyspace.name=user
-spring.data.casandra.contact-points=
-spring.data.casandra.port=
-spring.data.casandra.scheme-action=CONTACT_IF_NOT_EXIST
-spring.data.casandra.local-datacenter=datacenter1
-spring.data.casandra.read-timeout-millis=12000
+spring.data.cassandra.keyspace.name=user
+spring.data.cassandra.contact-points=
+spring.data.cassandra.port=
+spring.data.cassandra.scheme-action=CONTACT_IF_NOT_EXIST
+spring.data.cassandra.local-datacenter=datacenter1
+spring.data.cassandra.read-timeout-millis=12000
 
 ### REDIS ###
 

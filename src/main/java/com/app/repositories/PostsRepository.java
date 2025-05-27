@@ -1,7 +1,11 @@
 package com.app.repositories;
 
-import com.app.models.Posts;
+import com.app.models.Post;
 import org.springframework.data.cassandra.repository.CassandraRepository;
 
-public interface PostsRepository extends CassandraRepository<Posts, Long> {
+import java.util.List;
+
+public interface PostsRepository extends CassandraRepository<Post, Long> {
+    List<Long> getPostsIdsByUserId(long id);
+    void deleteByUserId(long id);
 }

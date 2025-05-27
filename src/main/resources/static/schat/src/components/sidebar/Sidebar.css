@@ -1,0 +1,20 @@
+.sidebar {
+    list-style-type: none;
+    background-color: #1C252F;
+    height: 100%;
+    width: 150px;
+    position: fixed;
+    padding-top: 40px;
+    top: 0;
+    left: 0;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.sidebar.open {
+    width: 150px;
+}
+
+.sidebar.close {
+    width: 64px;
+}

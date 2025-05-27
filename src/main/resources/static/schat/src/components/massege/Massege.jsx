@@ -1,4 +1,4 @@
-export default function Header() {
+export default function Massege() {
     return (
       <header>
         <h3>Project</h3>

@@ -13,7 +13,7 @@ import java.time.LocalTime;
 @Getter
 @Setter
 @Table("answers")
-public class Answers {
+public class Answer {
     @Id
     @CassandraType(type = CassandraType.Name.BIGINT)
     private long id;
@@ -33,6 +33,9 @@ public class Answers {
     @Column("answer_id")
     @CassandraType(type = CassandraType.Name.BIGINT)
     private long answerId;
+    @Column("user_id")
+    @CassandraType(type = CassandraType.Name.BIGINT)
+    private long userId;
     @Column("gif_link")
     @CassandraType(type = CassandraType.Name.TEXT)
     private String gifLink;

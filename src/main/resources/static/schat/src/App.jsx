@@ -1,5 +1,6 @@
-import Header from "./components/header/Header"
-import "./components/header/Header.css"
+import Header from "./components/header/Header";
+import Sidebar from "./components/sidebar/Sidebar";
+import "./components/header/Header.css";
 import "./App.css";
 
 export default function App() {
@@ -7,7 +8,7 @@ export default function App() {
     <div>
       <Header />
       <main>
-        <h2>Name</h2>
+        <Sidebar />
       </main>
     </div>
   );

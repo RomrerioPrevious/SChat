@@ -34,3 +34,4 @@ build/
 
 ### ANY ###
 src/main/resources/application.properties
+src/main/java/com/app/configuration/CassandraConfig.java
