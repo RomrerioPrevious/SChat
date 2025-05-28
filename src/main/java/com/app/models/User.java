@@ -1,7 +1,9 @@
 package com.app.models;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDate;
@@ -11,6 +13,7 @@ import java.util.List;
 @Getter
 @Setter
 @Entity
+@NoArgsConstructor
 @Table(name = "users")
 public class User {
     @Id
@@ -50,4 +53,25 @@ public class User {
     private String type;
     @Column(name = "two_factor")
     private String twoFactor;
+
+    public User(Long id, String password, String email, String username, String questionType, String questionAnswer, String secret, LocalDate date, LocalTime time, List<Integer> groups, List<Integer> contacts, List<String> favorites, String avatar, String name, List<Integer> subscriptions, List<Integer> likes, String type, String twoFactor) {
+        this.id = id;
+        this.password = password;
+        this.email = email;
+        this.username = username;
+        this.questionType = questionType;
+        this.questionAnswer = questionAnswer;
+        this.secret = secret;
+        this.date = date;
+        this.time = time;
+        this.groups = groups;
+        this.contacts = contacts;
+        this.favorites = favorites;
+        this.avatar = avatar;
+        this.name = name;
+        this.subscriptions = subscriptions;
+        this.likes = likes;
+        this.type = type;
+        this.twoFactor = twoFactor;
+    }
 }

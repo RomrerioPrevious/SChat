@@ -46,4 +46,17 @@ public class Personal {
     @Column("gif_link")
     @CassandraType(type = CassandraType.Name.TEXT)
     private String gifLink;
+
+    public Personal(long id, String message, LocalDate date, LocalTime time, long userId, long chatId, List<String> links, long answerId, long forwardedId, String gifLink) {
+        this.id = id;
+        this.message = message;
+        this.date = date;
+        this.time = time;
+        this.userId = userId;
+        this.chatId = chatId;
+        this.links = links;
+        this.answerId = answerId;
+        this.forwardedId = forwardedId;
+        this.gifLink = gifLink;
+    }
 }
