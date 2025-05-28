@@ -1,11 +1,13 @@
 package com.app.services;
 
 import com.app.models.Chat;
+import com.app.models.Personal;
 import com.app.repositories.ChatsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-// TODO create messages
+import java.util.List;
+
 @Service
 public class ChatsService {
     private final ChatsRepository chatsRepository;

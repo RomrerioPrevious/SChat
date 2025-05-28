@@ -8,7 +8,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
-// TODO new methods
 @Service
 @Transactional
 public class UserService {

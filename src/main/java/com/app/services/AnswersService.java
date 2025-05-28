@@ -18,7 +18,7 @@ public class AnswersService {
 
     public void save(Answer answer) {
         answersRepository.save(answer);
-    } // TODO add id in Post
+    }
 
     public Answer findById(long id) {
         return answersRepository.findById(id).orElse(null);

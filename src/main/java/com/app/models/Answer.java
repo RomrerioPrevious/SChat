@@ -1,6 +1,8 @@
 package com.app.models;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.cassandra.core.cql.Ordering;
@@ -12,6 +14,7 @@ import java.time.LocalTime;
 
 @Getter
 @Setter
+@NoArgsConstructor
 @Table("answers")
 public class Answer {
     @Id
@@ -39,5 +42,16 @@ public class Answer {
     @Column("gif_link")
     @CassandraType(type = CassandraType.Name.TEXT)
     private String gifLink;
+
+    public Answer(long id, String message, LocalDate date, LocalTime time, long postId, long answerId, long userId, String gifLink) {
+        this.id = id;
+        this.message = message;
+        this.date = date;
+        this.time = time;
+        this.postId = postId;
+        this.answerId = answerId;
+        this.userId = userId;
+        this.gifLink = gifLink;
+    }
 }
 
