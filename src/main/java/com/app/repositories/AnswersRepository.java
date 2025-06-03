@@ -7,11 +7,12 @@ import org.springframework.data.cassandra.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 public interface AnswersRepository extends CassandraRepository<Answer, Long> {
     @Query("SELECT * FROM answers WHERE post_id = ?0 ALLOW FILTERING;")
-    List<Answer> findByPostId(long postId);
+    Optional<List<Answer>> findByPostId(long postId);
 
     @AllowFiltering
     void deleteByPostId(long postID);

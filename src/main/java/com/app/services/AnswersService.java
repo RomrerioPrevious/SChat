@@ -25,7 +25,7 @@ public class AnswersService {
     }
 
     public List<Answer> findByPostId(long id) {
-        return answersRepository.findByPostId(id);
+        return answersRepository.findByPostId(id).orElseThrow();
     }
 
     public void deleteById(long id) {

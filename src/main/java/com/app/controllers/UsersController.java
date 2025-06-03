@@ -14,14 +14,20 @@ public class UsersController {
         return null;
     }
 
+
     @GetMapping("/registration")
-    public String registration() {
-        return "";
+    public String getRegistrationPage() {
+        return null;
+    }
+
+    @PostMapping("/registration")
+    public ResponseEntity<User> registration() {
+        return null;
     }
 
     @GetMapping("/user/{id:long}")
-    public String getProfile(long id) {
-        return "";
+    public ResponseEntity<User> getProfile(long id) {
+        return null;
     }
 
     @PatchMapping("/user/{id:int}")

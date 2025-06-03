@@ -23,7 +23,8 @@ public class PersonalServiceTest {
 
         @Bean
         public Post getPost() {
-            return new Post(1);
+            long id = 1;
+            return new Post(id);
         }
     }
 

@@ -1,7 +1,6 @@
 package com.app.models;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.cassandra.core.mapping.CassandraType;
 import org.springframework.data.cassandra.core.mapping.Column;
@@ -13,6 +12,9 @@ import java.util.List;
 
 @Getter
 @Setter
+@ToString
+@NoArgsConstructor
+@AllArgsConstructor
 @Table("personal")
 public class Personal {
     @Id
@@ -47,16 +49,7 @@ public class Personal {
     @CassandraType(type = CassandraType.Name.TEXT)
     private String gifLink;
 
-    public Personal(long id, String message, LocalDate date, LocalTime time, long userId, long chatId, List<String> links, long answerId, long forwardedId, String gifLink) {
+    public Personal(long id) {
         this.id = id;
-        this.message = message;
-        this.date = date;
-        this.time = time;
-        this.userId = userId;
-        this.chatId = chatId;
-        this.links = links;
-        this.answerId = answerId;
-        this.forwardedId = forwardedId;
-        this.gifLink = gifLink;
     }
 }

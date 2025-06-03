@@ -13,8 +13,10 @@ import java.util.Objects;
 
 @Getter
 @Setter
+@ToString
 @EqualsAndHashCode
 @NoArgsConstructor
+@AllArgsConstructor
 @Table("chats")
 public class Chat {
     @Id
@@ -49,16 +51,7 @@ public class Chat {
     @CassandraType(type = CassandraType.Name.BOOLEAN)
     private boolean isSecret;
 
-    public Chat(long id, String name, String description, LocalDate date, LocalTime time, List<Long> users, String secret, List<Long> messages, String avatar, boolean isSecret) {
+    public Chat(long id) {
         this.id = id;
-        this.name = name;
-        this.description = description;
-        this.date = date;
-        this.time = time;
-        this.users = users;
-        this.secret = secret;
-        this.messages = messages;
-        this.avatar = avatar;
-        this.isSecret = isSecret;
     }
 }

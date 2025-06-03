@@ -12,6 +12,7 @@ import java.time.LocalTime;
 @ToString
 @EqualsAndHashCode
 @NoArgsConstructor
+@AllArgsConstructor
 @Table("answers")
 public class Answer {
     @Id
@@ -40,15 +41,8 @@ public class Answer {
     @CassandraType(type = CassandraType.Name.TEXT)
     private String gifLink;
 
-    public Answer(long id, String message, LocalDate date, LocalTime time, long postId, long answerId, long userId, String gifLink) {
+    public Answer(long id) {
         this.id = id;
-        this.message = message;
-        this.date = date;
-        this.time = time;
-        this.postId = postId;
-        this.answerId = answerId;
-        this.userId = userId;
-        this.gifLink = gifLink;
     }
 }
 

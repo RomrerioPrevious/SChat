@@ -3,6 +3,8 @@ package com.app.services;
 import com.app.models.User;
 import com.app.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -10,7 +12,7 @@ import java.util.List;
 
 @Service
 @Transactional
-public class UserService {
+public class UserService{
     private final UserRepository userRepository;
     private final PostsService postsService;
 
